@@ -39,6 +39,9 @@ singularity pull cmatkhan/htcf_rstudio_server
 
 # submit via SBATCH
 
+***Note***: Even afer the job launches and you get output in the SLURM log, you may have to wait a moment
+for the container to start.
+
 see the script in this project rstudio_singularity.sbatch
 
 There are two cmd line arguments.
