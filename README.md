@@ -1,4 +1,10 @@
-# Description
+# Purpose
+
+There can be some difficulty in running rstudio server on the HTCF -- one has to do with the compiled software paths that R relies on, another with controlling where R puts downloaded packages. Using a container addresses these issues.  
+
+The container is configured so that you can mount a path into the container where any packages installed during an interactive session are saved. If you mount the same path from session to session, then you have a persistent software library. It also comes with most commonly used R software from CRAN and bioconductor pre-installed.
+
+# Cite
 
 This is an exact copy of David Tang's post here:
 
