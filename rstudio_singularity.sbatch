@@ -64,8 +64,8 @@ echo -e "
 singularity exec \
    -B $libpath:/packages \
    -B ${TMPDIR} \
-   -B /scratch/mblab/$USER \
-   -B /ref/mblab/data \
+   -B /scratch/<lab>/<your_scratch_dir> \
+   -B /ref/<lab>/data \
    $sif \
    rserver \
      --www-port $port \
