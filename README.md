@@ -40,7 +40,7 @@ eval $(spack load --sh singularityce@3.8.0)
 
 # you can fill in your own username/image name here, or feel free to 
 # use mine
-singularity pull cmatkhan/htcf_rstudio_server
+singularity pull docker://cmatkhan/htcf_rstudio_server
 ```
 
 # submit via SBATCH
