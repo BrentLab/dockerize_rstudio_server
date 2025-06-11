@@ -19,15 +19,16 @@ RUN apt-get clean all && \
     libgit2-dev \
     libpq-dev \
     libssl-dev \
+    curl \
+    wget \
   && apt-get clean all && \
   apt-get purge && \
   apt-get autoremove && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN Rscript -e "install.packages(c('usethis', 'devtools', 'remotes', 'renv', 'future', 'doFuture', 'furrr', 'future.batchtools', 'future.callr', 'future.apply', 'progressr', 'future.tests', 'parallelly', 'RPostgres', 'rmarkdown', 'tidyverse', 'workflowr','BiocManager', 'usethis', 'ggplot2','RSQLite', 'readxl', 'here', 'vroom', 'caret', 'broom', 'ggsci', 'DT', 'TidyMultiqc'), Ncpus=10);"
-RUN Rscript -e "BiocManager::install(version = '3.16')"
+RUN Rscript -e "BiocManager::install(version = '3.21')"
 RUN Rscript -e "BiocManager::install(c('Biobase', 'DESeq2', 'tximport', 'edgeR'), Ncpus=10)"
-RUN Rscript -e "remotes::install_github('BrentLab/brentlabRnaSeqTools', Ncpus=10)"
 
 
 #COPY user-settings /home/rstudio/.rstudio/monitored/user-settings/user-settings
